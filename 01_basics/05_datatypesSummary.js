@@ -70,3 +70,42 @@ const myFunction = function(){
 //        Function  =>  function
 //        Object  =>  object
 
+
+//  https://262.ecma-international.org/5.1/
+
+
+// +++++++++++++++++++ Stack and Heap memory in javascript ++++++++++++++
+
+
+//datatypes are based on memory allocation
+
+// Primitive datatypes->  call by value (string,number,boolean,null,undefined,BigInt,symbol) ->Stack memory
+
+// Reference/Non primitive data types -> call by reference ( array,object, function) -> heap memory
+
+// JavaScript is a dynamically typed language. This means that you don't need to specify the data type of a variable when you declare it.
+
+
+let myYoutubename = "chai aur code"
+let anotherName = myYoutubename
+anotherName = "adarsh"
+
+console.log(myYoutubename) //adarsh;
+console.log(anotherName) //adarsh;
+
+
+let userOne = {
+    email: "user@google.com",
+    upi: "user@ybl"
+}
+
+let userTwo = userOne
+
+userTwo.email = "usertwo@gmail.com"
+
+console.log(userOne.email);
+console.log(userTwo.email);
+
+
+
+
