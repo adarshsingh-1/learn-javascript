@@ -3,7 +3,7 @@
 // An array can hold multiple values of different data types.
 // An array can hold values of any data type.
 
-//ways of declaring arrays
+//ways of declaring array
 const myHeroes = ["shaktiman", "batman", "superman"];
 const num1 = new Array(1,2,3,4)
 
