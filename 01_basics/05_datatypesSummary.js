@@ -41,7 +41,7 @@ const bigNumber = BigInt(1234567890123456789012345678901234567890) //bigint
 
 
 const heres = ["shaktiman", "Nagraj", "Doga"];
-console.log(typeof heres); //object
+//console.log(typeof heres); //object
 
 let myObject = {
     name: "adarsh",
@@ -90,8 +90,9 @@ let myYoutubename = "chai aur code"
 let anotherName = myYoutubename
 anotherName = "adarsh"
 
-console.log(myYoutubename) //adarsh;
+console.log(myYoutubename) //chai aur code;
 console.log(anotherName) //adarsh;
+
 
 
 let userOne = {
@@ -103,8 +104,8 @@ let userTwo = userOne
 
 userTwo.email = "usertwo@gmail.com"
 
-console.log(userOne.email);
-console.log(userTwo.email);
+//console.log(userOne.email); //usertwo@gmail.com
+//console.log(userTwo.email); //usertwo@gmail.com
 
 
 
