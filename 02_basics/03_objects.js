@@ -50,7 +50,13 @@ user.greeting = function(){
     console.log("Hello JS user");
     
 }
+user.greetingTwo = function(){
+    console.log(`Hello JS user, ${this.name}`);
+    
+}
 
-console.log(user.greeting); 
+console.log(user.greeting());
+
+console.log(user.greetingTwo());
 
 // In JavaScript, if a function does not explicitly return a value, it returns `undefined` by default.
