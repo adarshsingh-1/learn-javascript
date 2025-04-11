@@ -54,8 +54,17 @@ const adminUser = [
 
 //  console.log(adminUser[0].email);
 
-console.log(Objest.keys(tinderUser)); // gives the keys of the object
-console.log(Objest.values(tinderUser)); // gives the keys of the object
+
+console.log(tinderUser);
+
+console.log(Object.keys(tinderUser)); // gives the keys of the object
+console.log(Object.values(tinderUser)); // gives the values of the object
+console.log(Object.entries(tinderUser)); // gives the key value pair of the object
+console.log(tinderUser.hasOwnProperty('id')); // checks if the object has the property
+
+
+console.log(tinderUser.hasOwnProperty('isLoggedIn'));
+
 
 
 
