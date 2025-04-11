@@ -59,4 +59,4 @@ console.log(user.greeting());
 
 console.log(user.greetingTwo());
 
-// In JavaScript, if a function does not explicitly return a value, it returns `undefined` by default.
+// n JavaScript, if a function does not return anything explicitly, it returns undefined. So when we log the result of such a function, we see undefined in the output.
