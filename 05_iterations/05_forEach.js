@@ -64,3 +64,8 @@ myCoding.forEach((item) => {
 
 
 //*imp* Used a lot in real-world APIs where data is returned as an array of objects.
+
+
+
+
+
