@@ -3,6 +3,9 @@
 //syntax
 // array.forEach(callbackFunction(currentValue, index, array))
 
+// forEach() kuch bhi return nahi karta — iska return value undefined hota hai.
+
+
 // currentValue: current item in the loop
 // index: index of current item (optional)
 // array: the original array being iterated (optional)
