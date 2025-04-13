@@ -36,6 +36,35 @@
 const balance  = 1000;
 //  if(balance>500) console.log("test");
 
+if(balance<500){
+    console.log("less than 500");
+}else if(balance<750){
+    console.log("less than 750");
+}else{
+    console.log("less than 1200");
+}
+
+
+const userLoggedIn = true;
+const debitCard = true;
+const LoogedInFromGoogle = false;
+const LoogedInFromEmail = false;
+//checking multiple conditions
+
+
+if(userLoggedIn && debitCard && balance>500){
+    console.log("user can do transaction");
+}
+
+
+if(LoogedInFromGoogle || LoogedInFromEmail){
+    console.log("user can do transaction");
+}
+
+
+
+
+
 
 
 
