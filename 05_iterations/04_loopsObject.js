@@ -1,5 +1,8 @@
-//for in loop with objects
+// for in loop - Used to iterate over enumerable properties of an object (including arrays, but not recommended for arrays/maps).
 
+
+
+// For Objects: (Most Common Use Case)
 const myObject = {
     js: 'JavaScript',
     py: 'Python',
@@ -19,6 +22,8 @@ for (const index in num) {
     //console.log(num[index]); //accsessing the value using index
     //console.log(index); //accessing the index
 }
+
+
 
 //for in loop with maps
 const map = new Map()
