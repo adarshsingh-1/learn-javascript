@@ -1,4 +1,7 @@
-//for of loop
+//for...of loop is used to iterate over iterable objects like arrays, strings, maps, sets, etc.
+
+//["","", "", "", ""]
+//[{}, {}, {}]
 
 const numbers = [1, 2, 3, 4, 5];
 for (const number of numbers) {
@@ -14,12 +17,14 @@ for (const char of str) {
 
 
 
-//Maps
+//Maps Example
 //map.size – returns total number of entries.
 //map.keys() – returns all keys.
 //map.values() – returns all values.
 //map.entries() – returns all key-value pairs.
-//create a map
+
+
+//create a map - Map is iterable — for...of works directly on its entries ([key, value]).
 const map = new Map()
 map.set('IN', "India")  
 map.set('US', "United States")
@@ -38,18 +43,16 @@ for (const [key, value] of map) {
 }
 
 
+// Feature                 for...of
+// Works on            Iterable objects (Array, Map, Set, String)
+// Returns             Value of each item (not index/key)
+// Best for            Values of array/map/strings
+// Avoid for           Plain objects (for...in is better)
 
 
 
-//for of loop with objects
-const person = {
-  name: "John",
-  age: 30,
-  city: "New York",
-};
-for (const key of Object.keys(person)) {
-  console.log(key, person[key]);
-}
+
+
 
 
 
