@@ -14,27 +14,28 @@
 
 </body>
 <script>
-
+    //add language function jo ki li ko add karega
+    // Yeh function innerHTML ke through naya language add karta hai
     function addLanguage(langName){
-        const li = document.createElement('li');
-        li.innerHTML = `${langName}`;
-        document.querySelector('.laguage').appendChild(li);
+        const li = document.createElement('li'); //naya <li> element bana raha hai
+        li.innerHTML = `${langName}`; //uske andar text content daal raha hai
+        document.querySelector('.laguage').appendChild(li);//list mein add kar raha hai
     }
     addLanguage('python');
     addLanguage('typescript');
 
 
 //optimised way
-
+// yeh version textNode use karta hai jo innerHTML se faster aur secure hota hai.
     function addOptLanguage(langName){
         const li = document.createElement('li');
-        li.appendChild(document.createTextNode(langName));
+        li.appendChild(document.createTextNode(langName));// Yeh version textNode use karta hai jo innerHTML se faster aur secure hota hai.
         document.querySelector('.laguage').appendChild(li);
     }
     addOptLanguage('java');
     addOptLanguage('c++');
 
-    //edit
+    //Edit (Update) Language: Yeh 2nd item (Python) ko dhoondta hai aur usko C# se replace karta hai.
     const secondLang = document.querySelector('li:nth-child(2)')
     //secondLang.innerHTML = 'C#';
     const newLi = document.createElement('li')
@@ -42,20 +43,24 @@
     secondLang.replaceWith(newLi)
 
 
-    //edit-2
+    //method 2:Yeh pehla item (JavaScript) ko directly replace karta hai with new HTML content.
     const firstLang = document.querySelector('li:first-child')
     firstLang.outerHTML = '<li>Java</li>'
     
     
-    //remove
+    //Remove Language:Yeh last item ko remove kar deta hai list se.
+    //method1:
     const lastLang = document.querySelector('li:last-child')
     lastLang.remove()
 
 
-    //remove-2
+    //remove-: Yeh pehla item remove karta hai using parent element ke through.
+    //method2:
     const firstLang2 = document.querySelector('li:first-child')
     const parent = firstLang2.parentElement
     parent.removeChild(firstLang2)
+
+    
 
     
 
