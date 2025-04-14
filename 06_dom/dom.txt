@@ -1,0 +1,179 @@
+how to access elemets in html file using dom techniques
+
+1. accessing by id
+syntax
+document.getElementById('title')
+
+2.if you want the id name
+syntax
+document.getElementById('title').id
+returns the idname
+
+3.
+syntax
+document.getElementById('title').class
+->this is always come as undefined
+
+
+document.getElementById('title').className
+->returns the classname
+
+
+document.getElementById('title')getAttribute('kon sa attribute chiaye')
+
+for example:-
+1.document.getElementById('title')getAttribute('id')
+2.document.getElementById('title')getAttribute('class')
+
+Agar tumhe heading set krne h toh setAttribute use karoge
+for example:-
+document.getElementById('title')setAttribute('class','new name to class')
+document.getElementById('title')setAttribute('class','test')
+iska output console mein nhe dikhayega but class name actually change hoga
+
+
+const title = document.getElementById('title')
+styling 
+
+title.style.bg-color = 'green'
+title.style.padding = '15px'
+title.style.borderRadius = '15px'
+
+
+how to add content using dom
+
+1.title.textContent 
+->It gives you the content written on the html page
+
+
+2.title.innerHTML
+->It gives you the content written on the html page
+
+
+3.title.innertext
+->It gives you the content written on the html page
+
+
+innerText property sirf wahi text return karti hai jo browser screen par actually visible hota hai. Agar koi text kisi CSS property (jaise display: none) ke wajah se chhupa hua hai, toh innerText us text ko ignore kar deta hai. Saath hi, innerText formatting ka bhi dhyan rakhta hai — jaise line breaks ya spacing screen ke hisaab se aati hai.
+
+textContent property us element ke andar ka pure plain text return karti hai, chahe wo text visible ho ya nahi. Isme koi formatting nahi hoti, aur agar koi tag ya hidden content bhi ho, toh wo bhi as a plain text milta hai. Ye innerText se thoda fast bhi hota hai kyunki ye reflow/repaint trigger nahi karta browser mein.
+
+innerHTML property sabse zyada powerful hai kyunki ye kisi element ke andar ka HTML content return karti hai — yaani text ke saath-saath HTML tags bhi include hote hain. Iska use tab karte hain jab kisi element ke andar HTML content read ya write karna hota hai. Isse tum HTML dynamically inject bhi kar sakte ho.
+
+for example:-
+<div id="demo">
+  Hello <span style="display:none">World</span>
+</div>
+
+const el = document.getElementById('demo');
+
+console.log(el.textContent); // "Hello World" (hidden bhi aaya)
+console.log(el.innerText);   // "Hello" (sirf dikhne wala part)
+
+innerHTML - innerHTML kisi element ke HTML content ko (including tags) get ya set karta hai.
+
+
+
+accessing by ClassName 
+syntax
+->document.getElementByClassName('class ka naam')
+
+
+QuerySelector - querySelector() ek method hai jo JavaScript mein DOM elements ko select karne ke liye use hota hai. Ye method tumhe kisi bhi CSS selector ka use kar ke pehla matching element return karta hai jo DOM mein milta hai. Agar matching element nahi milta, toh yeh null return karta hai.
+
+syntax
+document.querySelector(selector); 
+
+
+for example:-
+document.querySelector('h1'); 
+document.querySelector('.heading'); 
+document.querySelector('input[type="password"]); 
+document.querySelector('p:first-child']); 
+
+
+
+1.Single Element: querySelector() pehla matching element return karta hai. Agar tumhare page pe multiple elements hain jo same selector se match karte hain, toh ye pehla match select karega.
+
+
+2.Case Sensitive: Ye method case-sensitive hota hai, matlab .className aur .classname alag-alag consider hote hain.
+
+
+3.Returns null: Agar koi matching element nahi milta, toh null return hota hai, isliye hamesha result ko check karna chahiye.
+
+document.querySelector('ul')
+
+const myul = document.querySelector('ul')
+
+myul.querySelector('li')
+
+const turnGreen = myul.querySelector('li')
+
+
+turnGreen.style.backGroundColor = 'green'
+
+turnGreen.style.padding = "10px"
+
+turnGreen.innerText
+
+turnGreen.innerText = "five"
+
+*imp*
+querySelector() ek powerful aur flexible method hai, jo tumhe CSS selector ka use karke easily kisi bhi element ko select karne ka mauka deta hai. Agar tumhe multiple matching elements chahiye, toh querySelectorAll() ka use kar sakte ho.
+
+
+//syntax
+document.querySelectorAll(selector); 
+
+Term                        Description
+NodeList                Browser se DOM elements ko access karne par milta hai. Eg: document.querySelectorAll() ka output.
+Array                   JavaScript ka built-in object hai jo multiple values ko store karta hai. Eg: [1, 2, 3]
+
+NodeList aur HTMLCollection dono array-like hote hain, lekin:
+	1	NodeList querySelectorAll() se milta hai, ye static hota hai – DOM change hone par update nahi hota.
+	2	HTMLCollection getElementsByClassName() ya getElementsByTagName() se milta hai, ye live hota hai – DOM change hone par update ho jaata hai.
+	3	NodeList mein forEach() ka support hota hai, HTMLCollection mein nahi.
+	4	NodeList mein har type ke nodes ho sakte hain, HTMLCollection mein sirf HTML elements.
+
+Dono ko array banane ke liye Array.from() ya [...collection] use kar sakte ho.
+
+
+
+
+document.querySelectorAll('li'); 
+
+const list = document.querySelectorAll("li"); // NodeList
+const arr = [1, 2, 3, 4]; // Array
+
+nodelist ko forEach se access krna
+
+
+
+nodeList to array convert karna - Using Array.from()
+const nodeList = document.querySelectorAll("p");
+const arr = Array.from(nodeList);
+
+
+
+document.getElementByClassName('list-item')
+
+const nodeList = document.querySelectorAll("p"); // NodeList
+const array1 = Array.from(nodeList); // Converted to array
+
+const htmlCollection = document.getElementsByClassName("demo"); // HTMLCollection
+const array2 = Array.from(htmlCollection); // Converted to array
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
