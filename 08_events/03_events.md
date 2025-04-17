@@ -32,7 +32,7 @@ This example demonstrates the **asynchronous behavior** of JavaScript using `set
 ```
 
 
-```javascript```
+```javascript
 // JS
 const adarsh = function() {
     console.log("adarsh");
