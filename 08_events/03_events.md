@@ -29,6 +29,7 @@ This example demonstrates the **asynchronous behavior** of JavaScript using `set
 <!-- HTML -->
 <h1>Javascript Interview</h1>
 <button id="stop">Stop</button>
+```
 
 
 ```javascript```
