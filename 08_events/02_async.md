@@ -80,3 +80,40 @@ Promise.resolve().then(() => {
 });
 
 console.log("End");
+```
+
+## 🎯 Interview Quick Answers
+
+### 1. Why is JavaScript single-threaded?
+
+Because it has only **one call stack** and executes **one operation at a time**, ensuring synchronous execution by default.
+
+---
+
+### 2. How is asynchronous behavior handled in JavaScript?
+
+- Asynchronous functions (like `setTimeout`, `fetch`, Promises) are handled by **Web APIs** provided by the browser.
+- Once the task is complete, the **callback** is pushed to a **queue**.
+- The **Event Loop** checks the call stack and pushes callbacks when it's empty.
+
+---
+
+### 3. What is the difference between `setTimeout` and Promises?
+
+| Feature          | `setTimeout`                | `Promise`                        |
+|------------------|-----------------------------|----------------------------------|
+| Queue type       | Task Queue (Macrotask Queue) | Microtask Queue                  |
+| Execution order  | Executed **after** microtasks | Executed **before** setTimeout  |
+| Use case         | Delayed execution            | Immediate async resolution       |
+
+> ✅ Promises have **higher priority** in the event loop than `setTimeout`.
+
+---
+
+### 4. What is the Event Loop?
+
+- The **Event Loop** constantly monitors the **Call Stack** and **Task/Microtask Queues**.
+- If the **Call Stack is empty**, it pushes the first callback from the **Microtask Queue** (or **Task Queue** next) to the stack for execution.
+- It ensures **non-blocking behavior** in single-threaded JavaScript.
+
+---
