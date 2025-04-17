@@ -1,4 +1,4 @@
-# JavaScript Events – Beginner-Friendly Guide
+# JavaScript Events
 
 ## 🔹 What Are Events in JavaScript?
 
