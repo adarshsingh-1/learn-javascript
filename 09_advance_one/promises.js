@@ -1,29 +1,28 @@
-// const promise1  = new Promise(function(resolve, reject) {
-//     //do any task
-//     //BD calls , cryptography, file system, network calls
-//     setTimeout(function() {
-//     //    console.log('Async Task  completed');
-//        resolve()
-//     }, 1000);
-// })
+const promise1  = new Promise(function(resolve, reject) {
+    //do any task
+    //BD calls , cryptography, file system, network calls
+    setTimeout(function() {
+       console.log('Async Task  completed');
+       resolve()
+    }, 1000);
+})
 
-// promise1.then(function(){
-//     // console.log("Promise consumed");
+promise1.then(function(){
+    console.log("Promise consumed");
     
-// })
+})
 
+// Promise chaining
 
-// // Promise chaining
-
-// new promise2(function(resolve, reject) {
-//     setTimeout(function() {
-//         // console.log('Async Task 2 completed');
-//         resolve()
-//     }
-//     , 2000);
-// }).then(function(){
-//     // console.log("Promise 2 consumed");
-// })
+new promise2(function(resolve, reject) {
+    setTimeout(function() {
+        console.log('Async Task 2 completed');
+        resolve()
+    }
+    , 2000);
+}).then(function(){
+    console.log("Promise 2 consumed");
+})
 
 
 const promise3 = new Promise(function(resolve, reject) {
@@ -82,14 +81,44 @@ const promise5 = new Promise(function(resolve, reject){
 })    
 
 
-async function consumerPromise5(){
+async function consumePromise5(){
     try{
         const response  = await promise5
         console.log(response);
-    }catch{
+    }catch(error){
         console.log(error);
     }
-    
 }
 
-consumerPromiseFive()
+consumePromise5()
+
+
+async function getAllUsers(){
+    try{
+        const response = await fetch("https://jsonplaceholder.typicode.com/users")
+        // console.log(response);
+        const data = await response.json()
+        console.log(data);
+    }catch(error){
+        console.log("E", error);
+    }
+}
+
+
+//.then and .catch
+fetch('https://jsonplaceholder.typicode.com/users')
+.then((response) => {
+    return response.json()
+})
+.then((data) => {
+    console.log(data);
+    
+})
+.catch((error) => {
+    console.log("Error: Something went wrong");
+})
+
+
+
+
+getAllUsers()
