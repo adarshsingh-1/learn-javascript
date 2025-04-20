@@ -47,12 +47,12 @@ const promise3 = new Promise(function(resolve, reject) {
         resolve({usename:"john", email:"john@hmail.com"})
     },1000)
 
-})
+});
 
 promise3.then(function(user){
     console.log("User data: ", user);
     
-})
+});
 
 
 //1. Promise creation:
@@ -79,7 +79,7 @@ promise3.then(function(user){
 
 const promise4 = new Promise(function(resolve, reject){
     setTimeout(function(){
-        let error = false;
+        let error = true;
         if(!error){
             resolve({username:"john", password: "1234"})
         }else{
@@ -88,20 +88,29 @@ const promise4 = new Promise(function(resolve, reject){
     },1000)
 })
 
+promise4
+  .then((user) => {
+      console.log("User data: ", user);
+      return user.username;
+  })
+  .then((username)=>{
+      console.log("Username: ", username);
+  })
+  .catch(function(error){
+      console.log(error);
+  })
+  .finally(() => console.log("The promise is either resolved or rejected"));
 
 
-promise4.then((user) => {
-    console.log("User data: ", user);
-    return user.username
-}).then((username)=>{
-    console.log("Username: ", username);
-    
-}).catch(function(error){
-    console.log(error);
-}).finally(() => console.log("The promise is either resolved or rejected"))
+// Output agar error = true ho:
+// Error: Something went wrong
+// The promise is either resolved or rejected
 
 
-
+// 🔎 Output agar error = false ho:
+// User data:  { username: 'john', password: '1234' }
+// Username:  john
+// The promise is either resolved or rejected
 
 
 
@@ -158,3 +167,72 @@ fetch('https://jsonplaceholder.typicode.com/users')
 
 
 getAllUsers()
+
+
+//** imp **/
+// fetch() sirf network errors pe reject hota hai — HTTP errors (jaise 404) pe nahi, unhe .then() me response.ok ya response.status se handle karna padta hai. 
+
+// 1.	fetch() kab reject hota hai?
+// ➤ Jab network error ho (e.g., internet down, DNS error, ya CORS/permission issue).
+// ➤ Tabhi .catch() chalega.
+
+
+// 	2.	fetch() kab reject nahi hota?
+// ➤ Agar server 404 (Not Found), 500 (Server Error) jaise HTTP error bhejta hai, tab bhi fetch() reject nahi hota.
+// ➤ Us case me promise resolve ho jata hai, par response status ok nahi hota.
+
+
+// 	3.	Toh kya karna chahiye?
+// ➤ Tumhe .then() ke andar manually check karna padega:
+
+
+
+
+
+
+// ⚙️ How fetch() works behind the scenes — Explained in Points:
+// 	1.	fetch() Call Starts
+// 	•	Jab fetch('something') likhte ho, ek network request initiate hoti hai.
+// 	•	Ye asynchronous hoti hai aur turant ek Promise return karti hai.
+// 	2.	Request Goes to Web APIs / Node
+// 	•	Web Browser ya Node.js ke Web APIs network call handle karte hain.
+// 	•	Actual data fetch karne ke liye background mein network request bheji jaati hai.
+
+
+// 	3.	Network Request Triggered
+// 	•	Do possible results:
+// 	•	✅ Success (response mil gaya)
+// 	•	❌ Network error (no internet, DNS fail, etc.)
+
+
+// 	4.	Promise Resolution
+// 	•	Agar response milta hai (even with 404), Promise resolve hoti hai.
+// 	•	Agar network error hota hai, tabhi Promise reject hoti hai.
+
+
+// 	5.	HTTP Errors Are Not Rejections
+// 	•	HTTP status errors (like 404, 500) Promise ko reject nahi karte.
+// 	•	Tumhe manually check karna padta hai:
+// 	•	response.ok → true/false
+// 	•	response.status → jaise 404, 500, etc.
+
+
+// 	6.	Event Queues Are Created
+// 	•	onFulfilled[] (success ke case mein)
+// 	•	onRejection[] (network error ke case mein)
+// 	•	Inmein data store hota hai jab response return karta hai.
+
+
+// 	7.	Global Memory Reference
+// 	•	Jo fetch() ke result ko tum kisi variable mein store karte ho (e.g., response), wo global memory mein promise ke form mein hota hai jab tak resolve/reject nahi hota.
+
+
+// 	8.	Handle Result Using .then() / await
+// 	•	Response ko access karne ke liye:
+// 	•	.then(response => {...})
+// 	•	ya await response (async function ke andar)
+
+
+//  One-liner Summary:
+
+// “fetch() sirf tab reject hoti hai jab network error ho; HTTP errors (404, etc.) ke liye tumhe manually response.ok ya response.status check karna padta hai.”
