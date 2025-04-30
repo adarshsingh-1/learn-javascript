@@ -1,0 +1,100 @@
+Topics Before Learning React
+
+1.normal vs arrow function 
+
+function DoSomething(){
+    //code
+}
+
+//arrow function
+const DoSomething = () => {
+    //code
+}
+
+For Example:-
+const myComponent = () => {
+    return <div> </div>
+}
+
+
+2. Anonymous Function - doesn't have a name (very useful)
+
+<button onClick = { () => {console.log("Hello)
+}}>
+
+</button>
+
+3. Ternanry Operators - minimize the amount lines to code
+if(true){
+
+}else{
+
+}
+
+//another method
+let age = 16;
+if the age is greater than 10 
+let name = age > 10 && "Raju"
+let name = age > 10 ? "Raju" : "Jack"
+
+For Example:-
+
+const myComponent = () => {
+    return age > 10 <div> Pedro </div> : <div> Jack </div>
+}
+
+
+4. Objects 
+const person = {
+    name: "Pedro"
+    age: 20,
+    isMarried: false,
+};
+
+const name = person.name
+const age = person.age
+const isMarried = person.isMarried
+
+//Object Destructing
+const {name, age, isMarried} = person;
+ 
+ short-hand notation
+ const name = "Raj"
+ const age = 21;
+
+ const person1 = {
+    name, 
+    age, 
+    isMarried: false
+ };
+
+const person2 = {...person, name: "Jack"}
+
+5. Important Function
+let name = ["Pedro","Raj","Krish"];
+.map()
+.filter
+.map()
+
+names.map((name) => {
+    return 
+    console.log(name);
+    return name + "1"
+});
+
+["Pedro1", "Raj1","Krish1"]
+
+
+names.map((name)=>{
+    return <h1> {name} </h1>
+})
+
+names.filter((name) => {
+    return name !== "Pedro"
+})
+
+6. Aync + Await + Fetch 
+
+
+
+
