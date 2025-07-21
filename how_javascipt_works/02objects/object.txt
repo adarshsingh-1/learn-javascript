@@ -7,9 +7,14 @@ key-value pairs
 
 Advantages:-
 Simple
+
+Disadvantage:-
 This doesnot act as a blue print
 
-Base Blue Print 
+
+Another Method
+Using this Base Blue Print creating n number of objects.
+Function constructor
 
 IN older version of JS we can make use of function constructor
 
