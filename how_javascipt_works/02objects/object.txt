@@ -1,0 +1,18 @@
+Objects in JS
+
+
+1. Object Literals {}
+key-value pairs
+
+
+Advantages:-
+Simple
+This doesnot act as a blue print
+
+Base Blue Print 
+
+IN older version of JS we can make use of function constructor
+
+Normal function -> camelCase
+
+constructor function -> Pascal Case
