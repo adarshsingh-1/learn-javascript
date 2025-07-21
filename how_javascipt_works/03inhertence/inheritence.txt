@@ -1,0 +1,22 @@
+Object.create(p1) creates p2 with p1 as its prototype – so p2 inherits all properties and methods of p1.
+
+Calling p2.getFullName() uses p1's method, and this refers to p2, so it looks for p2.fname and p2.lname.
+
+If p2 doesn’t have its own properties, it uses inherited values from p1.
+
+Modifying p2.__proto__.fname = "Rohit" actually changes p1.fname, because p2.__proto__ === p1.
+
+So both p1.fname and p2.getFullName() reflect the updated name "Rohit Singh" after the change.
+
+
+
+Wrapper Classse
+
+class String{
+
+}
+
+
+const fname = new String()
+
+fname__proto__ = String.prototype
