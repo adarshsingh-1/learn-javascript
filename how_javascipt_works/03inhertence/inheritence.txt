@@ -10,8 +10,8 @@ So both p1.fname and p2.getFullName() reflect the updated name "Rohit Singh" aft
 
 
 
-Wrapper Classse
-
+What are Wrapper Classse
+Primitive types like string, number, boolean are not objects, but JavaScript allows you to use them like objects.
 class String{
 
 }
