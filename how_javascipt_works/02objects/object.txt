@@ -21,3 +21,14 @@ IN older version of JS we can make use of function constructor
 Normal function -> camelCase
 
 constructor function -> Pascal Case
+
+
+Before ES6
+
+->{}
+->Function constructor
+
+After ES6
+-> class keyword
+
+
