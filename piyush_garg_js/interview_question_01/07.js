@@ -13,4 +13,3 @@ for(let i = 0; i<10; i++ ){
 // Agar var hota: sab callbacks same memory location ki i ko point karte - result 10,10,10...
 // Let ke saath: har callback different memory location ki i ko point karta - result 0,1,2,3...9
 
-ˀ
