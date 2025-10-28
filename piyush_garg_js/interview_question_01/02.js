@@ -15,4 +15,3 @@ let age = 30;
 // Yeh code ReferenceError throw karta hai kyunki let variables ka hoisting behavior var se different hota hai. Let declarations hoist hote hain lekin Temporal Dead Zone (TDZ) mein rehte hain aur uninitialized state mein rehte hain jab tak actual declaration line nahi aati. Var ki tarah undefined nahi bante Memory Creation Phase mein - let     variables ko initialization se pehle access nahi kar sakte. Jab hum age = 100 assign karte hain aur console.log mein access karte hain, JavaScript 'Cannot access age before initialization' error throw karta hai. Yeh let ki block-scoping aur TDZ mechanism ko demonstrate karta hai jo accidental variable usage prevent karta hai.
 
 
-ˀ

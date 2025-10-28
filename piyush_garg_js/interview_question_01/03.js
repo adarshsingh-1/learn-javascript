@@ -8,7 +8,7 @@ var myFun = function(){
 myFun()
 
 function myFun(){
-    console.log("Helˀlo World 2");
+    console.log("Hello World 2");
 }
 
 myFun()
